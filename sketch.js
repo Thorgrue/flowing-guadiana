@@ -1,4 +1,4 @@
-let count = 1000;
+let count = 600;
 
 var particles_a = [];
 var particles_b = [];
@@ -11,8 +11,8 @@ let color_d = ("#F2CD5D");
 var fade = 200;
 var radius = 3;
 
-const w = 700;
-const h = 50;
+const w = 900;
+const h = 100;
 
 let noiseScale = 300;
 let noiseStrength = 5.2;
@@ -40,10 +40,10 @@ function setup() {
     let angle_d = random(TWO_PI);
     let dir_d = createVector(cos(angle_d), sin(angle_d));
     
-    particles_a[i] = new Particle(loc_a, dir_a, 1.5);
-    particles_b[i] = new Particle(loc_b, dir_b, 1.6);
-    particles_c[i] = new Particle(loc_c, dir_c, 1.75);
-		particles_d[i] = new Particle(loc_d, dir_d, 1.75);
+    particles_a[i] = new Particle(loc_a, dir_a, 1.1);
+    particles_b[i] = new Particle(loc_b, dir_b, 1.2);
+    particles_c[i] = new Particle(loc_c, dir_c, 1.15);
+		particles_d[i] = new Particle(loc_d, dir_d, 1.15);
   }
 }
 
@@ -95,7 +95,7 @@ Particle.prototype.update = function(r) {
 }
 
 Particle.prototype.checkEdges = function() {
-  if (this.loc.x < 0 || this.loc.x > width || this.loc.y < 0 || this.loc.y > height) {
+  if (this.loc.x < 100 || this.loc.x > (width-100) || this.loc.y < 200 || this.loc.y > (height-200)) {
     this.loc.x = random(w) + windowWidth*0.5 - w*0.5;
     this.loc.y = random(h) + windowHeight*0.5 - h*0.5;
   }
